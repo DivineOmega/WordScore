@@ -57,11 +57,25 @@ public class Main
 			
 			int score = 0;
 			
+			boolean invalidCharacters = false;
+			
 			for (int i = 0; i < word.length(); i++)
 			{
 				Character letter = new Character(word.charAt(i));
 				
+				if (!charScoreMap.containsKey(letter))
+				{
+					invalidCharacters = true;
+					break;
+				}
+				
 				score += charScoreMap.get(letter);
+			}
+			
+			if (invalidCharacters) {
+				System.out.println("I only want you to enter letters. No numbers or special characters.");
+				System.out.println();
+				continue;
 			}
 			
 			System.out.println("'"+word+"' scored "+score+" points!");
