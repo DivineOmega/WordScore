@@ -18,7 +18,7 @@ public class Main
 		for (int i = 0; i < letters.length(); i++)
 		{
 		    Character letter = new Character(letters.charAt(i)); 
-		    int score = random.nextInt(100+1); // score is a random number between 0 and 100 inclusive
+		    int score = -50 + random.nextInt(150+1); // score is a random number between -50 and 100
 		    
 		    charScoreMap.put(letter, score);
 		    //System.out.print(letter + "=" + score+", "); // debug output for testing, comment out when playing
